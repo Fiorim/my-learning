@@ -8,6 +8,8 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class DropsComponent implements OnInit {
 
+  randomNumber: number;
+
   items: FirebaseListObservable<any[]>;
 
   constructor(db: AngularFireDatabase) {
@@ -15,6 +17,7 @@ export class DropsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.randomNumber = Math.floor((Math.random() * 10) + 1);
   }
 
 }
