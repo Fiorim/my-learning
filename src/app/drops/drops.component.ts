@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
+import { Http, Response, Headers, RequestOptions, URLSearchParams } from '@angular/http';
+
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { NoteService } from '../service/note.service';
 
 @Component({
   selector: 'app-drops',
@@ -8,16 +12,28 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class DropsComponent implements OnInit {
 
-  randomNumber: number;
+  randomNote = {
+    date: '',
+    primaryTag: '',
+    secondaryTag: '',
+    message: ''
+  };
 
-  items: FirebaseListObservable<any[]>;
-
-  constructor(db: AngularFireDatabase) {
-    this.items = db.list('/notes');
+  constructor(
+    private db: AngularFireDatabase) {
   }
 
   ngOnInit() {
-    this.randomNumber = Math.floor((Math.random() * 10) + 1);
+    this.db.list('/notes').subscribe(noteList => {
+      const randomNumber = Math.floor((Math.random() * noteList.length));
+      this.randomNote = noteList[randomNumber];
+      console.log('noteList.length', noteList.length);
+      console.log('randomNumber', randomNumber);
+      console.log('noteList[randomNumber]', noteList[randomNumber]);
+    });
+
   }
+
+
 
 }

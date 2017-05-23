@@ -1,20 +1,12 @@
-<ul>
-  <li *ngFor="let item of items | async">
-    <ul>
-      <li>{{ item.date }}</li>
-      <li>{{ item.message }}</li>
-      <li>{{ item.primaryTag }}</li>
-      <li>{{ item.secondaryTag }}</li>
-    </ul>
-  </li>
-</ul>
-<!--<div class="jumbotron tip-container">
+<div class="jumbotron tip-container">
   <div class="container">
-    <h1>My Learning drops {{randomNumber}}</h1>
-    <p>Em arrow functions que tenham apenas uma instrução, é dispensável o uso de chaves e de return, e se tiver apenas um parametro, os parenteses também são dispensáveis</p>
-    <p><a class="btn btn-primary btn-lg" href="#" role="button">Next learning</a></p>-->
+    <!--<h2>{{ randomNote.date }} - </h2>-->
+    <h1>{{ randomNote.secondaryTag }}</h1>
+    <h3>{{ randomNote.primaryTag }}</h3>
+    <p>{{ randomNote.message }}</p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Next learning</a></p>
     <button type="button" class="btn btn-default new-tip-buttom" aria-label="Left Align" [routerLink]="['/register']">
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
     </button>
-  <!--</div>
-</div>-->
+  </div>
+</div>

@@ -11,6 +11,9 @@ import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { DropsComponent } from './drops/drops.component';
 
+import { NoteService } from './service/note.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +29,7 @@ import { DropsComponent } from './drops/drops.component';
     AngularFireDatabaseModule, // imports firebase/database, only needed for database features
     AppRoutingModule
   ],
-  providers: [],
+  providers: [NoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
