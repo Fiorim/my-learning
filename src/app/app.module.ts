@@ -12,6 +12,7 @@ import { RegisterComponent } from './register/register.component';
 import { DropsComponent } from './drops/drops.component';
 
 import { NoteService } from './service/note.service';
+import { AuthenticationComponent } from './authentication/authentication.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { NoteService } from './service/note.service';
     AppComponent,
     RegisterComponent,
     routingComponents,
-    DropsComponent
+    DropsComponent,
+    AuthenticationComponent
   ],
   imports: [
     BrowserModule,
