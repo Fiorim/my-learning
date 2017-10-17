@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { DropsComponent } from './drops/drops.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthenticationComponent } from './authentication/authentication.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'drops' },
   { path: 'drops', component: DropsComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'auth', component: AuthenticationComponent },
   { path: '**', component: DropsComponent },

@@ -6,9 +6,15 @@
   <base href="/">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
 </head>
 <body>
   <app-root>Loading...</app-root>
+  <script src="https://www.google.com/jsapi"></script>
+  <script >
+  google.load('visualization', '1.0', {
+      'packages': ['corechart']
+    });
+    </script>
 </body>
 </html>
